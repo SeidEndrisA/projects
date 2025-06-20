@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    /
+    <div class="container">
+        <h2> ❤️ Love Calculator ❤️</h2>
+        <div class="loveCalculator">
+        <label for="name1">Your Name:</label>
+        <input type="text" id="name1" required placeholder="Enter your name">
+        <label for="name2">Crush's Name:</label>
+        <input type="text" id="name2" required placeholder="Enter your crush's name">
+        <button onclick="calculateLove()">Calculate Love</button>
+        <div id="result">Result</div>
+        </div>
+        <div id="message"></div>
+    
+        <div id="history">
+            <h3>❤️ Love Score History</h3>
+            <ul id="historyList"></ul>
+        </div>
+        <!--<button onclick="clearHistory()">Clear History</button>-->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
