@@ -1,0 +1,40 @@
+{
+  // 📐 Format code with Prettier on save
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // 🧹 ESLint integration
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.fixAll.eslint": true
+  },
+
+  // 💾 Auto-save
+  "files.autoSave": "onWindowChange",
+
+  // 🌈 UI polish
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "One Dark Pro",
+
+  // ✨ HTML/CSS support
+  "html.autoClosingTags": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+
+  // 💡 Suggestions and IntelliCode
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+
+  // 🐛 Debugging settings
+  "debug.allowBreakpointsEverywhere": true,
+  "debug.openDebug": "neverOpen"
+}
