@@ -147,3 +147,50 @@ function drawNestedTriangle(height) {
     return triangle;
 }
 console.log(drawNestedTriangle(5)); // Output: *
+
+
+//Triangle using nested while loop
+function drawNestedTriangleWhile(height) {
+    let triangle = "";
+    let i = 1;
+    while (i <= height) {
+        let j = 1;
+        while (j <= i) {
+            triangle += "*";
+            j++;
+        }
+        triangle += "\n";
+        i++;
+    }
+    return triangle;
+}
+console.log(drawNestedTriangleWhile(5)); // Output: *
+
+//Triangle using do-while loop
+function drawTriangleDoWhile(height) {
+    let triangle = "";
+    let i = 1;
+    do {
+        triangle += "*".repeat(i) + "\n";
+        i++;
+    } while (i <= height);
+    return triangle;
+}
+console.log(drawTriangleDoWhile(5)); // Output: *
+
+//Triangle using nested do-while loop
+function drawNestedTriangleDoWhile(height) {
+    let triangle = "";
+    let i = 1;
+    do {
+        let j = 1;
+        do {
+            triangle += "*";
+            j++;
+        } while (j <= i);
+        triangle += "\n";
+        i++;
+    } while (i <= height);
+    return triangle;
+}
+console.log(drawNestedTriangleDoWhile(5)); // Output: *
