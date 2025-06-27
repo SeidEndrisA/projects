@@ -1,1 +1,1 @@
-# Some projects that are very helpful to make a practice for a bigginers.
+# Some projects that are very helpful for beginners to practice.
