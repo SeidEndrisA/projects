@@ -1,11 +1,12 @@
-//Imbading JS in html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1 onmouseover="style.color='red';" onmouseout="style.color='black';">Welcome to my page</h1>
     <p>This is a simple HTML page with embedded JavaScript.</p>
@@ -16,32 +17,36 @@
     <p>Click the button below to see an alert:</p>
     <button onclick="alert('Button clicked!')">Click me</button>
 -->
-   <!-- Add event listener for button click -->
+    <!-- Add event listener for button click -->
     <button id="greetButton">Greet Me</button>
 
     <!-- Add event listener for button click -->
-     <input type="button" value="Click" onclick="alert('Button clicked!')">
+    <input type="button" value="Click" onclick="alert('Button clicked!')"
+        onmouseover="this.style.backgroundColor='yellow';" onmouseout="this.style.backgroundColor='white';">
     <!--<h1 onMouseover="alert('Be sure to get your shopping done today.');">World Ends Tomorrow</h1>-->
-<p id="loris" onMouseover="this.style.color='red';" onMouseout="this.style.color='black';">Slow Loris: Mouse over for more info</p>
-<img src="../Images/puppy-2.jpg" onmouseover="src='/10 Days project/Images/puppy-3.jpg'" onmouseout="src='/10 Days project/Images/puppy-4.jpg'" alt="Puppy Images">     
+    <p id="loris" onMouseover="this.style.color='red';" onMouseout="this.style.color='black';">Slow Loris: Mouse over
+        for more info</p>
+    <img src="../Images/puppy-2.jpg" onmouseover="src='/10 Days project/Images/puppy-3.jpg'"
+        onmouseout="src='/10 Days project/Images/puppy-4.jpg'" alt="Puppy Images">
     <script>
-/*
-        // Function to greet the user
-document.getElementById("greetButton").addEventListener("click", function() {
-            alert("Hello, welcome to my page!");
-        });
-
-        // Function to greet the user
-        function greet() {
-            alert("Hello, welcome to my page!");
-        }
-
-        // Call the function when the page loads
-        window.onload = greet;
-        */
+        /*
+                // Function to greet the user
+        document.getElementById("greetButton").addEventListener("click", function() {
+                    alert("Hello, welcome to my page!");
+                });
+        
+                // Function to greet the user
+                function greet() {
+                    alert("Hello, welcome to my page!");
+                }
+        
+                // Call the function when the page loads
+                window.onload = greet;
+                */
     </script>
 </body>
-</html> 
+
+</html>
 <!-- 
     <script>
         // Function to greet the user
