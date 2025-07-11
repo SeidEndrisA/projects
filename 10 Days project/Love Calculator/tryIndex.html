@@ -26,8 +26,8 @@
     <!--<h1 onMouseover="alert('Be sure to get your shopping done today.');">World Ends Tomorrow</h1>-->
     <p id="loris" onMouseover="this.style.color='red';" onMouseout="this.style.color='black';">Slow Loris: Mouse over
         for more info</p>
-    <img src="../Images/puppy-2.jpg" onmouseover="src='/10 Days project/Images/puppy-3.jpg'"
-        onmouseout="src='/10 Days project/Images/puppy-4.jpg'" alt="Puppy Images">
+    <img src="../Images/puppy-3.jpg" onMouseover=" src='../Images/puppy-2.jpg'" onmouseout="src='../Images/puppy-4.jpg'"
+        alt="Puppy Images">
     <br>
     Email:<input type="email" placeholder="Enter your email" onfocus="this.style.backgroundColor='lightblue';"
         onblur="this.style.backgroundColor='white';">
@@ -56,17 +56,43 @@
     <h3>Iamge to be Disabled</h3>
     <img src="/10 Days project/Images/puppy-3.jpg" alt="Image" onClick="makeInvisible();" id="ugly">
 
-    <p id="p1"> this is big</p>
+    <p id="p2"> this is big</p>
 
-    <p id="p1" class="text">Hello World!</p>
+    <p id="p1" class="text" onmouseover="makeBig();">Hello World!</p>
     <button onclick="makeBig()">Add 'big' class</button>
     <button onclick="removeBig()">Remove 'big' class</button>
     <button onclick="toggleBig()">Toggle 'big' class</button>
 
+    <img src="../Images/puppy-2.jpg" id="before" onMouseover="swapPic();"> <br>
+    <button onclick="swapPic()">Swap Image</button>
+
+    <p>This bed is too small.</p>
+    <p>This bed is too big.</p>
+    <p>This bed is just right.</p>
 
 
 
     <script>
+
+        var par = document.getElementsByTagName("p");
+        var imgs = document.getElementsByTagName("img");
+        for (var i = 0; i < par.length; i++) {
+            par[i].style.fontSize = "1em";
+        }
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].style.borderRadius = "30px";
+            imgs[i].style.width = "200px";
+            imgs[i].style.height = "200px";
+            imgs[i].style.imageRendering = "pixelated";
+        }
+
+        function makeBig() {
+            document.getElementById("p2").style.fontSize = "2em";
+        }
+        function swapPic() {
+            document.getElementById("before").src = "../Images/puppy-4.jpg";
+        }
+
         function makeBig() {
             document.getElementById("p1").classList.add("big");
         }
