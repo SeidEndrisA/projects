@@ -1,17 +1,17 @@
 body {
-  background-color: #9992db;
+  background-color: #f6f8fc; /* Soft white-blue */
 }
 .container {
   max-width: 400px;
-  margin: 200px auto;
-  padding: 20px;
-  background-color: #f0f0f0;
-  border-radius: 8px;
-  box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.2);
+  margin: 120px auto;
+  padding: 24px;
+  background-color: #ffffff; /* White */
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.15);
 }
 h1 {
   text-align: center;
-  color: #333;
+  color: #2d2e83; /* Deep blue */
   margin-top: 0px;
 }
 form {
@@ -20,38 +20,42 @@ form {
   flex-direction: column;
 }
 label {
-  font-weight: 600px;
+  font-weight: 600;
   margin-bottom: 5px;
-  color: #070606;
+  color: #2d2e83; /* Deep blue */
 }
 input[type="number"],
 select {
   padding: 10px;
   margin-bottom: 10px;
-  border: none;
-  border-radius: 4px;
-  /*box-shadow: 0 2px 5px rgba(227, 221, 221, 0.2);*/
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #f3f4f6;
+  color: #2d2e83;
 }
 input[type="number"]:focus,
 select:focus {
   outline: none;
-  box-shadow: 0 0 5px #290be8;
+  box-shadow: 0 0 6px #a259f7;
+  border-color: #a259f7;
 }
 button[type="submit"] {
-  background-color: #6857d3;
-  color: white;
+  background-color: #a259f7; /* Vibrant purple */
+  color: #fff;
   border: none;
-  padding: 10px;
-  border-radius: 4px;
+  padding: 12px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  transition: background-color 0.3s;
 }
 button[type="submit"]:hover {
-  background-color: #b4abe8;
+  background-color: #2d2e83; /* Deep blue */
 }
 #result {
   text-align: center;
   font-size: 1.2em;
-  color: #333;
+  color: #2d2e83;
   margin-top: 20px;
+  animation: fadeIn 0.5s ease-in-out;
 }

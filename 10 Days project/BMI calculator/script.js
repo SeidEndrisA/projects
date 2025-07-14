@@ -1,8 +1,10 @@
 document.getElementById("bmiForm").addEventListener("submit", function (e) {
   e.preventDefault();
   const gender = document.getElementById("gender").value;
-  const heightfeet = parseInt(document.getElementById("height-feet").value);
-  const heightinches = parseInt(document.getElementById("height-inches").value);
+  const heightfeet = parseFloat(document.getElementById("height-feet").value);
+  const heightinches = parseFloat(
+    document.getElementById("height-inches").value
+  );
   const weight = parseFloat(document.getElementById("weight").value);
 
   if (gender && heightfeet && heightinches && weight) {
@@ -21,9 +23,6 @@ document.getElementById("bmiForm").addEventListener("submit", function (e) {
       category = "Obesity";
     }
 
-    let resultMessage = `Your BMI is <strong>${bmi}</strong>`;
-    resultMessage += " category: <strong>" + category + "</strong>";
-
-    resultElement.innerHTML = resultMessage;
+    resultElement.innerHTML = `Your BMI is : <strong>${bmi}</strong> <br> Category:<strong> ${category}.</strong>`;
   }
 });
