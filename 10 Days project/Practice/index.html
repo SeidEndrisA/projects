@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>❤️ Love Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <h1>💘 Love Calculator 💘</h1>
+
+    <div class="container">
+        <input type="text" id="name1" placeholder="Your Name" />
+        <input type="text" id="name2" placeholder="Their Name" />
+        <button onclick="calculateLove()">💌 Calculate Love</button>
+        <button onclick="resetCalculator()">🔄 Reset</button>
+
+        <div id="result"></div>
+        <div id="message"></div>
+        <div id="history">
+            <h3>❤️ Past Results</h3>
+            <ul id="historyList"></ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
