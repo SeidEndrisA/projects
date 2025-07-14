@@ -194,3 +194,18 @@ function drawNestedTriangleDoWhile(height) {
     return triangle;
 }
 console.log(drawNestedTriangleDoWhile(5)); // Output: *
+
+//DOM
+<body>
+  <div id="cal">
+    <p>Southern Cal is sunny.</p>
+    <p>Northern Cal is rainy.</p>
+    <p>Eastern Cal is desert.</p>
+  </div>
+  <div id="ny">
+    <p>Urban NY is crowded.</p>
+    <p>Rural NY is sparse.</p>
+  </div>
+</body>;
+const d = document.getElementById("ny");
+const p = d.childNodes[1];
