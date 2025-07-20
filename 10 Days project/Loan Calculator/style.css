@@ -50,7 +50,7 @@ h1 {
 }
 
 .inputGroup input {
-  width: 100%;
+  width: 95%;
   padding: 10px 12px;
   border: 1px solid #bcdffb;
   border-radius: 6px;
@@ -102,6 +102,32 @@ button:active {
   animation: fadeInUp 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
+/* Social Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  color: #2d5c88;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #4ca1af;
+}
+/* Font Awesome Icons */
+.cont-icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.cont-icon:hover {
+  transform: scale(1.1);
+}
 /* Add a subtle hover effect for input fields */
 .inputGroup input:hover {
   box-shadow: 0 0 6px #2d5c8833;

@@ -17,9 +17,9 @@ document.getElementById("loanForm").addEventListener("submit", function (e) {
     (loanAmount * interestRate) / (1 - Math.pow(1 + interestRate, -loanTerm));
   // Display the result
   document.getElementById("result").innerHTML =
-    "Monthly Payment: $" +
+    "<strong>Monthly Payment:</strong> $" +
     monthlyPayment.toFixed(2) +
     "<br />" +
-    "Total Payment: $" +
+    "<strong>Total Payment:</strong> $" +
     (monthlyPayment * loanTerm).toFixed(2);
 });
