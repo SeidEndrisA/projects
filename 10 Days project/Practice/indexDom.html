@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple DOM example</title>
+</head>
+
+<body style="background-color: lightgray; font-family: Arial, sans-serif;">
+    <section>
+        <h1>Simple DOM Manipulation Example</h1>
+        <p id="intro">In this example, we will manipulate the DOM using JavaScript.</p>
+
+        <img id="puppy" src="../Images/puppy-2.jpg"
+            alt="A cute puppy: A small brown and white dog with floppy ears, sitting on a grassy field.">
+
+        <p id="container">This is a <strong>simple</strong> example of <em>DOM manipulation</em>.</p>
+
+        <p>Here we will add a link to the <a href="https://www.mozilla.org/">Mozilla homepage</a></p>
+        <button id="alertButton" onclick="showAlert()" mouseover="this.style.backgroundColor='yellow'"
+            mouseout="this.style.backgroundColor=''">Show Alert</button>
+
+        <div id="container2">
+            <h1>Container 2</h1>
+            <p>This is a paragraph inside container 2.</p>
+            <p>Click the <strong>Click Me!</strong> button to see the alert message.</p>
+            <button onclick="showAlert()">Click Me!</button>
+        </div>
+
+    </section>
+    <!-- For JavaScript Form Validation -->
+    <form action="">
+        <label for="name">Name:</label>
+        <input type="text" oncopy="myFunction()" id="name" name="name" oninput="upperCase();" onfocus="onFocus()"
+            placeholder="Enter your name">
+        <input type="submit" value="Submit">
+    </form>
+    <h1 onclick="this.innerHTML = 'Ooops!'">Click on this text!</h1>
+    <h2 onclick="changeText(this)">Click on this text!</h2>
+
+    <button id="demo" onclick="displayDate()">Try it</button>
+    <p id="date"></p>
+
+
+    <script>
+        let container2 = document.getElementById("container2");
+        let container = document.getElementById("container");
+        let parentElement = container2.parentElement;
+        let children = container2.childNodes
+        let elementChildren = container2.children;
+        let firstChild = container2.firstElementChild; // <h1>
+        let lastChild = container2.lastElementChild;   // <p>
+        let firstChildNode = container2.firstChild;     // <h1>
+        let lastChildNode = container2.lastChild;       // <p>
+
+        // nextElementSibling
+
+        let nextSibling = container.nextElementSibling;
+        console.log("The next sibling of container is: " + (nextSibling ? nextSibling.tagName : "None"));
+        let previousSibling = container.previousElementSibling;
+        console.log("The previous sibling of container is: " + (previousSibling ? previousSibling.tagName : "None"));
+        console.log("The first child element of container2 is: " + firstChild.nodeName);
+        console.log("The last child element of container2 is: " + lastChild.nodeName);
+        console.log("The first child node of container2 is: " + firstChildNode.nodeName);
+        console.log("The last child node of container2 is: " + lastChildNode.nodeName);
+        console.log("The number of child elements in container2 is: " + elementChildren.length);
+        console.log("The number of child nodes in container2 is: " + children.length);
+        console.log("The element children of container2 are:");
+        // Loop through the element children and log their tag names
+        Array.from(elementChildren).forEach(child => {
+            console.log(child.nodeName);
+        });
+        console.log("The parent element of container2 is: " + parentElement.nodeName);
+        // Node Values
+        let nodeValue = container2.nodeValue; // null for element nodes
+        let nodeType = container2.nodeType; // 1 for element nodes
+        console.log("The node type of container2 is: " + nodeType);
+        console.log("The node value of container2 is: " + (nodeValue !== null ? nodeValue : "null"));
+        // Node Name
+        console.log("The node name of container2 is: " + container2.nodeName);
+        // Text Content and Inner HTML
+        console.log("The text content of container is: " + container.textContent);
+        console.log("The HTML content of container is: " + container.innerHTML);
+        console.log("The text content of container2 is: " + container2.textContent);
+        console.log("The HTML content of container2 is: " + container2.innerHTML);
+
+        //Creating New HTML Elements (Nodes)
+        let newDiv = document.createElement("div");
+        newDiv.innerHTML = "<h3>New Element</h3><p>This is a new paragraph.</p>";
+        container2.appendChild(newDiv);
+
+        //Creating new HTML Elements - insertBefore()
+        let newParagraph = document.createElement("p");
+        newParagraph.textContent = "This is a new paragraph inserted before the existing content.";
+        container.insertBefore(newParagraph, container.firstChild);
+        //Removing Existing HTML Elements
+        let existingParagraph = container.querySelector("p");
+        if (existingParagraph) {
+            container.remove(existingParagraph);
+        }
+
+        //NodeList and HTMLCollection
+        let allParagraphs = document.querySelectorAll("p");
+        console.log("All paragraphs in the document:");
+        allParagraphs.forEach((p, index) => {
+            console.log(`Paragraph ${index + 1}: ${p.textContent}`);
+        });
+        //NodeList length
+        console.log("Total number of paragraphs: " + allParagraphs.length);
+
+        //HTMLCollection Example
+        let allDivs = document.getElementsByTagName("div");
+        console.log("All divs in the document:");
+        Array.from(allDivs).forEach((div, index) => {
+            console.log(`Div ${index + 1}: ${div.innerHTML}`);
+        });
+        /* 
+        */
+        myFunction = function () {
+            alert("You copied the text!");
+        }
+        function onFocus() {
+            const nameInput = document.getElementById("name");
+            nameInput.style.backgroundColor = "lightblue";
+        }
+        const alert_button = document.getElementById("alertButton");
+        alert_button.onmouseover = function () {
+            alert_button.style.backgroundColor = "yellow";
+        };
+        alert_button.onmouseout = function () {
+            alert_button.style.backgroundColor = "";
+            alert_button.style.width = "100px";
+            alert_button.style.height = "30px";
+            alert_button.style.fontSize = "20px";
+            alert_button.style.color = "black";
+            alert_button.style.borderRadius = "10px";
+        };
+        function upperCase() {
+            const nameInput = document.getElementById("name");
+            nameInput.value = nameInput.value.toUpperCase();
+        }
+        // function checkCookies() {
+        //     if (navigator.cookieEnabled) {
+        //         alert("Cookies are enabled.");
+        //     } else {
+        //         alert("Cookies are not enabled.");
+        //     }
+        // }
+        function displayDate() {
+            document.getElementById("date").innerHTML = Date();
+        }
+        function changeText(element) {
+            element.innerHTML = "You clicked on the text!";
+        }
+        document.getElementById("intro").style.color = "blue";
+        document.getElementById("intro").style.fontSize = "20px";
+        //Form Validation
+        document.querySelector("form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form submission for validation
+            const nameInput = document.getElementById("name");
+            // Check if input is empty or is a number
+            if (nameInput.value.trim() === "" || !isNaN(nameInput.value.trim())) {
+                alert("Name must be filled out");
+            } else {
+                alert("Form submitted successfully!");
+                // Here you can add code to actually submit the form if needed
+            }
+        });
+        // Select elements
+        const imgPuppy = document.getElementById("puppy");
+        imgPuppy.style.borderRadius = "30px";
+        imgPuppy.style.width = "200px";
+        imgPuppy.style.height = "200px";
+        imgPuppy.setAttribute("class", "puppy-image");
+        //Adding and Deleting Elements 
+        //document.createElement(element)	Create an HTML element
+
+        let newPara = document.createElement("p");
+        newPara.textContent = "This is a new paragraph added to the DOM.";
+        document.body.appendChild(newPara);
+
+        //document.appendChild(element)	Add an HTML element
+        document.body.appendChild(newParagraph);
+
+        //document.write(text)	Write into the HTML output stream
+        document.write("<h2 id='welcome'>Welcome to the DOM Manipulation Example</h2>");
+
+        //Event Handling and popup messages
+        function showAlert() {
+            alert("This is an alert message!");
+        }
+
+
+        const link = document.querySelector('a');
+        link.textContent = "Mozilla Developer Network";
+        link.href = "https://developer.mozilla.org";
+        const sect = document.querySelector("section");
+        const para = document.createElement("p");
+        para.textContent = "We hope you enjoyed the ride.";
+        sect.appendChild(para);
+        //Insert text node
+        const textNode = document.createTextNode("Visit ");
+        const text = document.createTextNode(" — the premier source for web development documentation.");
+
+        para.appendChild(text);
+        para.insertBefore(textNode, para.firstChild);
+
+        //Create a link node
+        const linkNode = document.createElement("a");
+        linkNode.textContent = "MDN Web Docs";
+        linkNode.href = "https://developer.mozilla.org";
+        para.insertBefore(textNode, para.firstChild);
+        para.appendChild(linkNode);
+        para.style.color = "white";
+        para.style.backgroundColor = "black";
+        para.style.padding = "10px";
+        para.style.width = "250px";
+        para.style.textAlign = "center";
+
+        //JavaScript Form Validation
+
+
+    </script>
+</body>
+
+</html>

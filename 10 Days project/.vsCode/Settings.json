@@ -20,7 +20,7 @@
 
   // 🌈 UI polish
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Default Dark Modern",
 
   // ✨ HTML/CSS support
   "html.autoClosingTags": true,
@@ -36,5 +36,7 @@
 
   // 🐛 Debugging settings
   "debug.allowBreakpointsEverywhere": true,
-  "debug.openDebug": "neverOpen"
+  "debug.openDebug": "neverOpen",
+  // Github Pull Request settings
+  "githubPullRequests.codingAgent.uiIntegration": true
 }

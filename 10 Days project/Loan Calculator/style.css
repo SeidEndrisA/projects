@@ -1,0 +1,108 @@
+/* Fade-in animation for container and result */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+}
+
+.container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 32px 24px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.12);
+  border: none;
+  animation: fadeInUp 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+h1 {
+  text-align: center;
+  color: #2d5c88;
+  margin-bottom: 24px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+.inputGroup {
+  margin-bottom: 18px;
+}
+
+.inputGroup label {
+  display: block;
+  margin-bottom: 7px;
+  color: #3a3a3a;
+  font-weight: 500;
+}
+
+.inputGroup input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #bcdffb;
+  border-radius: 6px;
+  background: #f7fbff;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.3s;
+}
+
+.inputGroup input:focus {
+  border-color: #2d5c88;
+  outline: none;
+  box-shadow: 0 0 8px #4ca1af55;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #2d5c88 0%, #4ca1af 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #4ca1af 0%, #2d5c88 100%);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 16px rgba(44, 62, 80, 0.12);
+}
+
+button:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 4px rgba(44, 62, 80, 0.08);
+}
+
+.result {
+  margin-top: 24px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #eaf6ff;
+  color: #2d5c88;
+  font-size: 1.05rem;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.06);
+  border: 1px solid #bcdffb;
+  animation: fadeInUp 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+/* Add a subtle hover effect for input fields */
+.inputGroup input:hover {
+  box-shadow: 0 0 6px #2d5c8833;
+}
